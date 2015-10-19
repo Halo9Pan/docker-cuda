@@ -1,3 +1,0 @@
-docker build -t halo9pan/cuda .
-docker create -t -i --name=Demeter26-cuda -v /home/halo9pan/Demeter/26/samples/NVIDIA_CUDA-7.0_Samples:/samples --device /dev/nvidiactl:/dev/nvidiactl --device /dev/nvidia0:/dev/nvidia0 halo9pan/cuda bash
-docker start -a -i Demeter26-cuda
