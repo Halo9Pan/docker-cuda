@@ -6,17 +6,12 @@ MAINTAINER Halo9Pan <halo9pan@gmail.com>
 RUN export NVIDIA_VERSION=355.11 \
   CUDA_MAJOR=7.5 \
   CUDA_VERSION=7.5.18 \
-  CUDA_MAJOR_U=7_5 \
   CUDA_PATH=/opt/CUDA \
-  KERNEL_VERSION=3.16.0-38-generic
 
 RUN apt-get install -y \
-  build-essential \
-  linux-headers-3.16.0-38-generic \
-  bash-completion \
-  wget
-RUN apt-get install -y --no-install-recommends \
-  linux-image-3.16.0-38-generic
+  linux-headers-generic linux-image-generic \
+  build-essential bash-completion wget
+
 # Install NVIDIA driver (silent, no kernel)
 RUN cd /tmp &&\
   wget http://http.download.nvidia.com/XFree86/Linux-x86_64/355.11/NVIDIA-Linux-x86_64-355.11.run &&\
