@@ -11,14 +11,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 # Install NVIDIA driver (silent, no kernel)
 RUN cd /tmp &&\
-  wget http://http.download.nvidia.com/XFree86/Linux-x86_64/${NVIDIA_VERSION}/NVIDIA-Linux-x86_64-${NVIDIA_VERSION}.run && \
+  wget -q http://http.download.nvidia.com/XFree86/Linux-x86_64/${NVIDIA_VERSION}/NVIDIA-Linux-x86_64-${NVIDIA_VERSION}.run && \
   chmod +x NVIDIA-Linux-x86_64-*.run && ./NVIDIA-Linux-x86_64-*.run -s --no-kernel-module && \
   rm -rf *
 
 # Install CUDA toolkit
 RUN cd /tmp && \
 # Download run file
-  wget http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR}/Prod/local_installers/cuda_${CUDA_VERSION}_linux.run && \
+  wget -q http://developer.download.nvidia.com/compute/cuda/${CUDA_MAJOR}/Prod/local_installers/cuda_${CUDA_VERSION}_linux.run && \
 # Install CUDA toolkit
   chmod +x cuda_*_linux.run && ./cuda_*_linux.run --silent --toolkit --toolkitpath=${CUDA_PATH} && \
 # Make the run file executable and extract
