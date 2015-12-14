@@ -5,7 +5,7 @@ MAINTAINER Halo9Pan <halo9pan@gmail.com>
 # CUDA version - as the kernel is shared the host and container must correspond
 ENV NVIDIA_VERSION=352.63 CUDA_MAJOR=7.5 CUDA_VERSION=7.5.18 CUDA_PATH=/opt/CUDA
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   linux-headers-generic linux-image-generic \
   build-essential bash-completion wget
 
