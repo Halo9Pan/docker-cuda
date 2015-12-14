@@ -3,7 +3,7 @@ FROM buildpack-deps:trusty
 MAINTAINER Halo9Pan <halo9pan@gmail.com>
 
 # CUDA version - as the kernel is shared the host and container must correspond
-ENV NVIDIA_VERSION=352.63
+ENV NVIDIA_VERSION=352.41
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   linux-headers-generic linux-image-generic \
