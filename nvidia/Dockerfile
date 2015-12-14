@@ -7,7 +7,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   build-essential bash-completion wget
 
 # CUDA version - as the kernel is shared the host and container must correspond
-ENV NVIDIA_VERSION=352.55
+ENV NVIDIA_VERSION=352.63
 
 # Install NVIDIA driver (silent, no kernel)
 RUN cd /tmp &&\
