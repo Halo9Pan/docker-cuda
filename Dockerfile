@@ -21,5 +21,5 @@ RUN cd /tmp && \
 # Add to path
 ENV PATH ${CUDA_PATH}/bin:${PATH}
 # Configure dynamic link
-RUN echo "${CUDA_PATH}/lib64" >> /etc/ld.so.conf && ldconfig
+RUN echo "${CUDA_PATH}/lib64" >> /etc/ld.so.conf.d/CUDA.conf && ldconfig
 

@@ -1,4 +1,4 @@
-FROM buildpack-deps:trusty
+FROM halo9pan/cuda
 
 # remove several traces of debian python
 RUN apt-get purge -y python.*
